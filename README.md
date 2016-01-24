@@ -1,2 +1,5 @@
 # always-learning
-A learning journal
+A learning journal. 
+
+Anything I learn or find interesting, recorded day-by-day.
+
