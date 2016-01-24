@@ -1,7 +1,9 @@
 Since I am doing all of this in markdown: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
-Workflowy - https://workflowy.com/
->a time-management / to-do list tool that seems to have a nice, free-form, bullet-point style
+Workflowy 
+---------
+https://workflowy.com/
+> a time-management / to-do list tool that seems to have a nice, free-form, bullet-point style
 
 Docker Swarm on AWS 
 -------------------
