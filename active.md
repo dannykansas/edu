@@ -1,5 +1,9 @@
 Since I am doing all of this in markdown: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
+Haskell Programming from First Principles
+-----------------------------------------
+Working through this book, currently in preview: http://haskellbook.com
+
 Algorithmic Time Subtraction
 ----------------------------
 https://www.mathsisfun.com/time-add-subtract.html
