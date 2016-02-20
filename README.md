@@ -1,5 +1,6 @@
-# always-learning
-A journal of my learning.
+# edu repo
 
-Anything I learn or find interesting, recorded day-by-day.
+Ongoing education on various computer-y things.
+
+See: Haskell, Python
 
