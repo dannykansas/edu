@@ -7,4 +7,3 @@
 -- "Hello!" has the type [Char] (Character)
 
 -- 
-
