@@ -9,6 +9,7 @@
 
 module VitaminCalc where
 
+-- assign Types to top-scope variables
 userGoal    :: Integer
 userAge     :: Integer
 userBMI     :: Float
@@ -16,6 +17,6 @@ userAlb     :: Integer
 userStart   :: Integer
 
 main :: IO ()
-main userGoal userAge userBMI userAlb user Start = 
-
-
+main do
+  putStrLn "Enter goal 25-OH level: "
+  userGoal <- getLine
