@@ -1,0 +1,36 @@
+-- [(8.52 − Desired change in serum 25-hydroxyvitamin D level)                                                                                                                                              
+--      + (0.074 × Age)                                                                                                                                                                                     
+--      – (0.20 × BMI)                                                                                                                                                                                      
+--      + (1.74 × Albumin concentration)                                                                                                                                                                    
+--      – (0.62 × Starting serum 25-hydroxyvitamin D concentration)]/(−0.002)                                                                                                                               
+                                                                                                                                                                                                            
+data Equation = Equation {                                                                                                                                                                                  
+    desiredChange :: Double                                                                                                                                                                                 
+  , age           :: Double                                                                                                                                                                                 
+  , bmi           :: Double                                                                                                                                                                                 
+  , albumin       :: Double                                                                                                                                                                                 
+  , serum         :: Double                                                                                                                                                                                 
+  } deriving Show                                                                                                                                                                                           
+                                                                                                                                                                                                            
+calculate :: Equation -> Double                                                                                                                                                                             
+calculate Equation{..} =                                                                                                                                                                                    
+    ((8.52 - desiredChange)                                                                                                                                                                                 
+  + (0.074 * age)                                                                                                                                                                                           
+  - (0.20 * bmi)                                                                                                                                                                                            
+  + (1.74 * albumin)                                                                                                                                                                                        
+  - (0.62 * serum)) / (-0.002)                                                                                                                                                                              
+                                                                                                                                                                                                            
+getArg :: IO Double                                                                                                                                                                                         
+getArg = read <$> getLine                                                                                                                                                                                   
+                                                                                                                                                                                                            
+main :: IO ()                                                                                                                                                                                               
+main = do                                                                                                                                                                                                   
+  print =<<                                                                                                                                                                                                 
+    calculate <$>                                                                                                                                                                                           
+      do Equation                                                                                                                                                                                           
+           <$> do putStrLn "Desired change:" >> getArg                                                                                                                                                      
+           <*> do putStrLn "Age:" >> getArg                                                                                                                                                                 
+           <*> do putStrLn "BMI:" >> getArg                                                                                                                                                                 
+           <*> do putStrLn "Albimun:" >> getArg                                                                                                                                                             
+           <*> do putStrLn "Serum:" >> getArg                                                                                                                                                               
+                                                 
