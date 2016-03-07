@@ -36,5 +36,8 @@ gp(){
 export NVM_DIR="/Users/${USER}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# add Haskell to path
+PATH=/Users/${USER}/Library/Haskell/bin:$PATH
+
 ## And random aliases (alii? - ha!) go here:
 alias ll="ls -la"
