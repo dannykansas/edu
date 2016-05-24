@@ -9,7 +9,7 @@ gpip(){
 
 ## use my aws key with ssh
 awssh(){
-   ssh -i ~/.ssh/aws_ubuntu.pem ubuntu@"$@"
+   ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/aws_ubuntu.pem ubuntu@"$@"
 }
 
 ## quick git commit with message
