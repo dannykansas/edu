@@ -32,3 +32,10 @@ fi
 # Turn on terminal colors and username/path highlighting
 export TERM="xterm-color" 
 export PS1='\[\e[0;31m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/danny/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/danny/google-cloud-sdk/completion.bash.inc'
