@@ -12,6 +12,11 @@ awssh(){
    ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/aws_ubuntu.pem ubuntu@"$@"
 }
 
+## use my GCE key with ssh
+gssh(){
+   ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/google_compute_engine.pem "$@"
+}
+
 ## quick git commit with message
 gc(){
   git commit -am "$@"
