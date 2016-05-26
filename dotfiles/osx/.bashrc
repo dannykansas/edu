@@ -7,6 +7,11 @@ gpip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
+# docker-compose
+dc(){
+  docker-compose "$@"
+}
+
 ## use my aws key with ssh
 awssh(){
    ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/aws_ubuntu.pem ubuntu@"$@"
