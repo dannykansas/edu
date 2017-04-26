@@ -7,14 +7,14 @@ gpip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-# docker-compose
-dc(){
-  docker-compose "$@"
-}
-
 ## use my aws key with ssh
 awssh(){
    ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/aws_ubuntu.pem ubuntu@"$@"
+}
+
+## use global aws key with ssh
+vmissh(){
+   ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/vmi-global.pem ubuntu@"$@"
 }
 
 ## use my GCE key with ssh
@@ -45,9 +45,6 @@ gp(){
 # node version manager setup
 export NVM_DIR="/Users/${USER}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# add Haskell to path
-PATH=/Users/${USER}/Library/Haskell/bin:$PATH
 
 ## And random aliases (alii? - ha!) go here:
 alias ll="ls -la"
