@@ -1,4 +1,4 @@
-# For kicks, and so I can stop looking up bash
+# For kicks, and so I can stop looking up bash comparison syntax
 # https://www.hackerrank.com/challenges/bash-tutorials---comparing-numbers
 
 read x
