@@ -35,3 +35,7 @@ if [ -e ${HOME}/google-cloud-sdk/completion.bash.inc ]
   then
     source "${HOME}/google-cloud-sdk/completion.bash.inc"
 fi
+
+# kubectl bash completion
+source /usr/local/etc/bash_completion
+source <(kubectl completion bash)

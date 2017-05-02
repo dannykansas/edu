@@ -49,5 +49,3 @@ export NVM_DIR="/Users/${USER}/.nvm"
 ## And random aliases (alii? - ha!) go here:
 alias ll="ls -la"
 
-## Autocompletion for kubectl
-source <(kubectl completion bash)
