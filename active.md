@@ -25,7 +25,7 @@ https://workflowy.com/
 Docker Swarm on AWS 
 -------------------
 http://levvel.io/blog-post/running-distributed-docker-swarm-on-aws/
-> A solid tutorial, just seems to be a few month behind when packages started being rolled into
+> A solid tutorial, just seems to be a few months behind when packages started being rolled into
 > rpm / apt / other package managers, so the `curl` fetching method for installation seems a bit
 > outdated. I wrote a script in SaltStack that handles the installation which seems to be a better
 > and more maintainble method for working with this (at least on a single host; multi-host, I am
