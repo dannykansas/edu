@@ -1,6 +1,9 @@
-# edu repo
+# Personal and Professional Education
 
-Ongoing education on various computer-y things.
+Ongoing education on various computer science-y things.
 
-See: Haskell, Python
+#Primary Goal: 
+To avoid the sad state of creating a dozen repos every year on new languages and projects, knowing that only 25% of them will ever have more than one commit. This is a functional playground, and any serious work gets to graduate to it's own repo
 
+#Secondary Goal:
+To hold my dotfiles ;)
