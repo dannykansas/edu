@@ -5,9 +5,6 @@
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
 
-# Ensure user-installed binaries take precedence
-export PATH="/usr/local/bin:${PATH}"
-
 # Load .bashrc if it exists
 test -f ~/.bashrc && source ~/.bashrc
 
@@ -42,3 +39,11 @@ fi
 # add golang binaries to path
 # TODO: this is being added earlier in the path by... something. Find the culprit
 export PATH="${PATH}:/usr/local/go/bin"
+
+# add awscli to PATH
+PATH="${PATH}:${HOME}/Library/Python/3.6/bin"
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
