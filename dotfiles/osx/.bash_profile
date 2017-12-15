@@ -25,7 +25,7 @@ export TERM="xterm-color"
 export PS1='\[\e[0;31m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 
 # Update PATH for the Google Cloud SDK.
-if [ -e ${HOME}/google-cloud-sdk/path.bash.inc ]
+if [ -e ${HOME}/google-cloud-sdk/path.bash.inc ];
   then
     source "${HOME}/google-cloud-sdk/path.bash.inc"
 fi 
@@ -42,6 +42,11 @@ export PATH="${PATH}:/usr/local/go/bin"
 
 # add awscli to PATH
 PATH="${PATH}:${HOME}/Library/Python/3.6/bin"
+
+# Source AWS bash complete if aws_completer exists
+if [ -f /usr/local/bin/aws_completer ]; then
+    complete -C '/usr/local/bin/aws_completer' aws
+fi
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
