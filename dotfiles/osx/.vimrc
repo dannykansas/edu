@@ -6,9 +6,9 @@ set expandtab
 
 syntax on
 
-" Highlight lines over 80 columns wide (good for haskell and python)
+" Highlight lines over 161 columns wide (good for haskell and python)
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%161v.\+/
 
 " Required for vim-instant-markdown 
 " https://github.com/suan/vim-instant-markdown
