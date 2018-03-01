@@ -48,10 +48,10 @@ if [ -f /usr/local/bin/aws_completer ]; then
     complete -C '/usr/local/bin/aws_completer' aws
 fi
 
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
+# Use git autocompletion, if it exists
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave

@@ -45,6 +45,7 @@ gp(){
 # node version manager setup
 export NVM_DIR="/Users/${USER}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This actually loads nvm
 
 # ensure correct GOPATH
 export GOPATH="${HOME}/repos/edu/go"
