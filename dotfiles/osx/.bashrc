@@ -1,5 +1,11 @@
-# pip should only run if there is a virtualenv currently activated
-#export PIP_REQUIRE_VIRTUALENV=true
+# dannykansas' .bashrc
+#   from github.com/dannykansas/edu
+#
+#   Execution order:
+#     - .bash_profile:
+#        - .bashrc
+#        - .profile
+
 # cache pip-installed packages to avoid re-downloading
 #export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 # allow override of pip virtualenv lock

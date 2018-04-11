@@ -43,7 +43,7 @@ export PATH="${PATH}:/usr/local/go/bin"
 # add awscli to PATH
 PATH="${PATH}:${HOME}/Library/Python/3.6/bin"
 
-# Source AWS bash complete if aws_completer exists
+# Source AWS bash completion if aws_completer exists
 if [ -f /usr/local/bin/aws_completer ]; then
     complete -C '/usr/local/bin/aws_completer' aws
 fi
