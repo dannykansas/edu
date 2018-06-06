@@ -1,50 +1,49 @@
-# dannykansas' .bashrc
-#   from github.com/dannykansas/edu
-#
-#   Execution order:
-#     - .bash_profile:
-#        - .bashrc
-#        - .profile
+: '
+  dannykansas .bashrc dotfile
+ 
+   .bash_profile loads:
+        - .bashrc (you are here!)
+        - .profile 
+
+  More at: https://github.com/dannykansas/edu
+'
 
 # cache pip-installed packages to avoid re-downloading
-#export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-# allow override of pip virtualenv lock
-gpip(){
-   PIP_REQUIRE_VIRTUALENV="" pip "$@"
-}
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+#######################
+# make ssh life easier!
+#######################
 
 ## use my aws key with ssh
-awssh(){
-   ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/aws_ubuntu.pem ubuntu@"$@"
+opssh(){
+   ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/ops_rsa ec2-user@"$@"
 }
 
-## use global aws key with ssh
-vmissh(){
-   ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/vmi-global.pem ubuntu@"$@"
-}
-
-## use my GCE key with ssh
+## use GCE key with ssh
 gssh(){
    ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/google_compute_engine.pem "$@"
 }
 
-## quick git commit with message
+#######################
+#   git flow shortcuts!
+#######################
+
 gc(){
   git commit -am "$@"
 }
-
-## quick git status
 gs(){
   git status
 }
-
-## quick git add everything here
 ga(){
   git add .
 }
-
-## quick git commit, and push origin master
 gp(){
+  git pull
+}
+
+# I probably shouldn't have this as a shortcut... hmm.
+gpush(){
   git commit -am "$@" && git push
 }
 
