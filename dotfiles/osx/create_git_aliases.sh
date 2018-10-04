@@ -12,7 +12,7 @@
    Just run once after installing git. 
    Rerun when new aliases are added.
 
- Table of Contents:
+ Index of Alias Commands:
    1. git branches
    2. git cob  
 '
