@@ -36,10 +36,6 @@ if [ -e ${HOME}/google-cloud-sdk/completion.bash.inc ]
     source "${HOME}/google-cloud-sdk/completion.bash.inc"
 fi
 
-# TODO: finalize or delete
-# add bucc/bosh councourse binaries to path
-export PATH="${PATH}:/Users/dannyfowler/repos/bucc/bin"
-
 # add awscli to PATH
 PATH="${PATH}:${HOME}/Library/Python/3.6/bin"
 
@@ -53,12 +49,11 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-# Source chtf
+# Source chtf (change terraform version)
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
     source "/usr/local/share/chtf/chtf.sh"
 fi
 
-## Setting PATH for Python 3.6
-## The original version is saved in .bash_profile.pysave
-#PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-#export PATH
+# TODO: finalize or delete
+# add bucc/bosh councourse binaries to path
+export PATH="${PATH}:/Users/dannyfowler/repos/bucc/bin"
