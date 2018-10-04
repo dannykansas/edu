@@ -21,6 +21,8 @@
    2. git cob  
 '
 
+echo "Creating git aliases..."
+
 #  1. git branches 
 #
 #  Usage: git branches
@@ -34,3 +36,5 @@ git config --global alias.branches "!echo ' ------------------------------------
 #  Output: creates and switches to new branch
 
 git config --global alias.cob "checkout -b"
+
+echo "Aliases added!"
