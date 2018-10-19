@@ -4,6 +4,8 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+set mouse=nicr
+
 syntax on
 
 " Highlight lines over 161 columns wide (good for haskell and python)
