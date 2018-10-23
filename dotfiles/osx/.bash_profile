@@ -49,7 +49,3 @@ fi
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
     source "/usr/local/share/chtf/chtf.sh"
 fi
-
-# TODO: finalize or delete
-# add bucc/bosh councourse binaries to path
-export PATH="${PATH}:/Users/dannyfowler/repos/bucc/bin"
