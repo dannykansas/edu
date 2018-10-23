@@ -31,9 +31,8 @@ if [ -e ${HOME}/google-cloud-sdk/completion.bash.inc ]
     source "${HOME}/google-cloud-sdk/completion.bash.inc"
 fi
 
-# load pyenv shims and add awscli to PATH
-eval "$(pyenv init -)"
-PATH="${PATH}:${HOME}/Library/Python/2.7/bin"
+# add python executables to path
+PATH="${PATH}:${HOME}/Library/Python/3.6/bin"
 
 # Source AWS bash completion if aws_completer exists
 if [ -f /usr/local/bin/aws_completer ]; then

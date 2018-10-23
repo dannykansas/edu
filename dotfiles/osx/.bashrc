@@ -7,6 +7,7 @@
 
   More at: https://github.com/dannykansas/edu
 '
+eval "$(pyenv init -)"
 
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
