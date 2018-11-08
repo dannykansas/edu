@@ -7,8 +7,6 @@
 
   More at: https://github.com/dannykansas/edu
 '
-eval "$(pyenv init -)"
-
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
@@ -71,3 +69,5 @@ export GOPATH="${HOME}/repos/edu/go"
 ## And random aliases (alii? - ha!) go here:
 alias ll="ls -la"
 
+# prepend pyenv shims to path
+eval "$(pyenv init -)"
