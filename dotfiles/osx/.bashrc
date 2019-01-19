@@ -74,4 +74,3 @@ alias wifiup="networksetup -setairportpower Wi-Fi on"
 # prepend pyenv shims to path
 eval "$(pyenv init -)"
 
-networksetup -setairportpower Wi-Fi off
