@@ -68,6 +68,10 @@ export GOPATH="${HOME}/repos/edu/go"
 
 ## And random aliases (alii? - ha!) go here:
 alias ll="ls -la"
+alias wifidown="networksetup -setairportpower Wi-Fi off"
+alias wifiup="networksetup -setairportpower Wi-Fi on"
 
 # prepend pyenv shims to path
 eval "$(pyenv init -)"
+
+networksetup -setairportpower Wi-Fi off
