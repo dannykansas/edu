@@ -9,20 +9,20 @@ GIT=".git-completion.bash"
 BPR_SOURCE=${PWD}/${BPR}
 BRC_SOURCE=${PWD}/${BRC}
 VRC_SOURCE=${PWD}/${VRC}
-TMX_SOURCE=${PWD}/${VRC}
+TMX_SOURCE=${PWD}/${TMX}
 GIT_SOURCE=${PWD}/${GIT}
 
 BPR_DEST=${HOME}/${BPR}
 BRC_DEST=${HOME}/${BRC}
 VRC_DEST=${HOME}/${VRC}
-TMX_DEST=${HOME}/${VRC}
+TMX_DEST=${HOME}/${TMX}
 GIT_DEST=${HOME}/${GIT}
 
 if [ -L $BPR_DEST ]
 then
   echo "${BPR} already exists!"
 else
-  ln -s $BPR_SOURCE $BPR_DEST || echo "Failed to create .bash_profile"
+  ln -s $BPR_SOURCE $BPR_DEST || echo "Failed to create ${BPR}"
   if [ -L $BPR_DEST ]
   then
     echo "${BPR} created successfully."
@@ -33,7 +33,7 @@ if [ -L $BRC_DEST ]
 then
   echo "${BRC} already exists!"
 else
-  ln -s $BRC_SOURCE $BRC_DEST || echo "Failed to create .bashrc"
+  ln -s $BRC_SOURCE $BRC_DEST || echo "Failed to create ${BRC}"
   if [ -L $BRC_DEST ]
   then
     echo "${BRC} created successfully."
@@ -44,7 +44,7 @@ if [ -L $VRC_DEST ]
 then
   echo "${VRC} already exists!"
 else
-  ln -s $VRC_SOURCE $VRC_DEST || echo "Failed to create .vimrc"
+  ln -s $VRC_SOURCE $VRC_DEST || echo "Failed to create ${VRC}"
   if [ -L $VRC_DEST ]
   then
     echo "${VRC} created successfully."
@@ -55,7 +55,7 @@ if [ -L $TMX_DEST ]
 then
   echo "${TMX} already exists!"
 else
-  ln -s $TMX_SOURCE $TMX_DEST || echo "Failed to create .vimrc"
+  ln -s $TMX_SOURCE $TMX_DEST || echo "Failed to create ${TMX}"
   if [ -L $TMX_DEST ]
   then
     echo "${TMX} created successfully."
@@ -66,7 +66,7 @@ if [ -L $GIT_DEST ]
 then
   echo "${GIT} already exists!"
 else
-  ln -s $GIT_SOURCE $GIT_DEST || echo "Failed to create .vimrc"
+  ln -s $GIT_SOURCE $GIT_DEST || echo "Failed to create ${GIT}"
   if [ -L $GIT_DEST ]
   then
     echo "${GIT} created successfully."
