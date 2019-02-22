@@ -70,7 +70,12 @@ export GOPATH="${HOME}/repos/edu/go"
 alias ll="ls -la"
 alias wifidown="networksetup -setairportpower Wi-Fi off"
 alias wifiup="networksetup -setairportpower Wi-Fi on"
-
+alias dsa='docker stop `docker ps -q`'
+alias dcl='docker stop `docker ps -aq` && docker rm `docker ps -aq`'
+ 
 # prepend pyenv shims to path
 eval "$(pyenv init -)"
 
+# aws shortcuts for multiple accounts
+alias use_growlabs="export AWS_DEFAULT_PROFILE=growlabs"
+alias use_adroll="unset AWS_DEFAULT_PROFILE"
