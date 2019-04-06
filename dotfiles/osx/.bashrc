@@ -51,7 +51,7 @@ gpush(){
 # --------------------
 
 git-all-subtrees(){
-git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq
+  git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq
 }
 
 git-active-subtrees(){
@@ -66,7 +66,7 @@ export NVM_DIR="/Users/${USER}/.nvm"
 # ensure correct GOPATH
 export GOPATH="${HOME}/repos/edu/go"
 
-## And random aliases (alii? - ha!) go here:
+## And random aliases (alii?) go here:
 alias ll="ls -la"
 alias wifidown="networksetup -setairportpower Wi-Fi off"
 alias wifiup="networksetup -setairportpower Wi-Fi on"
@@ -76,6 +76,19 @@ alias dcl='docker stop `docker ps -aq` && docker rm `docker ps -aq`'
 # prepend pyenv shims to path
 eval "$(pyenv init -)"
 
+# -------------------
+#  aws related funcs
+# -------------------
+
 # aws shortcuts for multiple accounts
-alias use_growlabs="export AWS_DEFAULT_PROFILE=growlabs"
-alias use_adroll="unset AWS_DEFAULT_PROFILE"
+alias aws_growlabs="export AWS_DEFAULT_PROFILE=growlabs && export AWS_PROFILE=growlabs"
+alias aws_adroll="unset AWS_DEFAULT_PROFILE && unset AWS_PROFILE"
+
+# find out who i am for aws
+alias aws_whoami="aws sts get-caller-identity"
+
+# connect to an instance by id
+# stolen from: http://travisjeffery.com/b/2015/11/ssh-into-ec2-instances-by-instance-id/
+function ec2-ssh () {
+  ssh $(aws ec2 describe-instances --filter Name=instance-id,Values=$1 | jq '.Reservations[0].Instances[0].PrivateIpAddress' | tr -d '"')
+}
