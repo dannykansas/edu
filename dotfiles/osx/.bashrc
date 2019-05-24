@@ -93,3 +93,11 @@ alias aws_whoami="aws sts get-caller-identity"
 function ec2-ssh () {
   ssh $(aws ec2 describe-instances --filter Name=instance-id,Values=$1 | jq '.Reservations[0].Instances[0].PrivateIpAddress' | tr -d '"')
 }
+
+# ----------------------------
+#  terraform helper functions
+# ----------------------------
+
+## use my aws key with ssh
+alias tfp="terraform plan | landscape"
+alias tfapply="terraform apply | landscape"
