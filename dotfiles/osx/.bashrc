@@ -1,9 +1,10 @@
 : '
   dannykansas .bashrc dotfile
  
-   .bash_profile loads:
+   .bash_profile loads (in this order):
         - .bashrc (you are here!)
         - .profile 
+        - .bash_profile
 
   More at: https://github.com/dannykansas/edu
 '

@@ -1,6 +1,13 @@
-# dannykansas' OS X .bash_profile
-# Public stuff goes here, 
-# private stuff goes in .profile
+: '
+  dannykansas .bash_profile dotfile (macOS)
+
+    .bash_profile loads (in this order):
+        - .bashrc
+        - .profile
+        - .bash_profile (you are here!)
+  
+  More at: https://github.com/dannykansas/edu
+'
 
 # Load .bashrc if it exists
 test -f ~/.bashrc && source ~/.bashrc
@@ -18,6 +25,10 @@ fi
 # Turn on terminal colors and username/path highlighting
 export TERM="xterm-color" 
 export PS1='\[\e[0;31m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+
+# Turn on CLICOLORS and LSCOLORS
+export CLICOLOR=1
+#export 
 
 # Update PATH for the Google Cloud SDK.
 if [ -e ${HOME}/google-cloud-sdk/path.bash.inc ];
