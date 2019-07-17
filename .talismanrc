@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: dotfiles/osx/.bash_profile
+  checksum: 6582103f570bc26a6f03cbe5a7060fda338279b32991dee88b7c229392cf4719
+  ignore_detectors: []
