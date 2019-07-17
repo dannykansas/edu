@@ -56,3 +56,10 @@ fi
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
     source "/usr/local/share/chtf/chtf.sh"
 fi
+
+
+# >>> talisman >>>
+# Below environment variables should not be modified unless you know what you are doing
+export TALISMAN_HOME=/Users/dannyfowler/.talisman/bin
+alias talisman=$TALISMAN_HOME/talisman_darwin_amd64
+# <<< talisman <<<
