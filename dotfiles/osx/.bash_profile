@@ -15,12 +15,18 @@ test -f ~/.bashrc && source ~/.bashrc
 # Load .profile if it exists
 test -f ~/.profile && source ~/.profile
 
-# Source bash completion if it exists
+# Source bash completion (v1) if it exists
 # (if not, you can run 'brew install bash-completion' as remedy
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     # general bash completion
     source $(brew --prefix)/etc/bash_completion
 fi
+
+# Source general bash completion (v2) if exists
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# see ~/.bashrc for specific bash completion loaders
 
 # Turn on terminal colors and username/path highlighting
 export TERM="xterm-color" 
@@ -56,10 +62,3 @@ fi
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
     source "/usr/local/share/chtf/chtf.sh"
 fi
-
-
-# >>> talisman >>>
-# Below environment variables should not be modified unless you know what you are doing
-export TALISMAN_HOME=/Users/dannyfowler/.talisman/bin
-alias talisman=$TALISMAN_HOME/talisman_darwin_amd64
-# <<< talisman <<<

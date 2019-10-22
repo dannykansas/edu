@@ -8,11 +8,21 @@
 
   More at: https://github.com/dannykansas/edu
 '
+# brew sometimes throws stuff in sbin
+export PATH=$PATH:/usr/local/sbin
+
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
+# ---------------------------
+#  specific completion loaders
+# ---------------------------
+
+# kubectl
+source <(kubectl completion bash)
+
 # ----------------------
-# make ssh life easier!
+# make ssh life easier
 # ----------------------
 
 ## use my aws key with ssh
@@ -26,7 +36,7 @@ gssh(){
 }
 
 # ----------------------
-#   git flow shortcuts!
+#   git flow shortcuts
 # ----------------------
 
 gc(){
@@ -64,10 +74,18 @@ export NVM_DIR="/Users/${USER}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This actually loads nvm
 
-# ensure correct GOPATH
-export GOPATH="${HOME}/repos/edu/go"
+# -------------------
+#  golang setup
+# -------------------
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
-## And random aliases (alii?) go here:
+# -------------------
+#  alias grab bag
+# -------------------
 alias ll="ls -la"
 alias wifidown="networksetup -setairportpower Wi-Fi off"
 alias wifiup="networksetup -setairportpower Wi-Fi on"
@@ -76,6 +94,7 @@ alias dcl='docker stop `docker ps -aq` && docker rm `docker ps -aq`'
  
 # prepend pyenv shims to path
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # -------------------
 #  aws related funcs
@@ -94,6 +113,10 @@ function ec2-ssh () {
   ssh $(aws ec2 describe-instances --filter Name=instance-id,Values=$1 | jq '.Reservations[0].Instances[0].PrivateIpAddress' | tr -d '"')
 }
 
+function ecr-login () {
+  aws ecr get-login --region us-west-2 --no-include-email
+}
+
 # ----------------------------
 #  terraform helper functions
 # ----------------------------
@@ -101,3 +124,4 @@ function ec2-ssh () {
 ## use my aws key with ssh
 alias tfp="terraform plan | landscape"
 alias tfapply="terraform apply | landscape"
+
