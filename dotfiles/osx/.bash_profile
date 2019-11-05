@@ -65,3 +65,7 @@ fi
 
 # stop Catalina zsh prompt annoyances
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# MacPorts path prefix (required for gnuradio plugins) 
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
