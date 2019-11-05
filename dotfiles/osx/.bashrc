@@ -9,7 +9,8 @@
   More at: https://github.com/dannykansas/edu
 '
 # brew sometimes throws stuff in sbin
-export PATH=$PATH:/usr/local/sbin
+# TODO: cleanup or leave; MacPorts already prepends this to the path in .bash_profile
+# export PATH=$PATH:/usr/local/sbin
 
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
