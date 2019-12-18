@@ -10,7 +10,7 @@
 '
 # brew sometimes throws stuff in sbin
 # TODO: cleanup or leave; MacPorts already prepends this to the path in .bash_profile
-# export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/local/sbin
 
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
@@ -104,6 +104,7 @@ eval "$(pyenv virtualenv-init -)"
 # aws shortcuts for multiple accounts
 alias aws_growlabs="export AWS_DEFAULT_PROFILE=growlabs && export AWS_PROFILE=growlabs"
 alias aws_adroll="unset AWS_DEFAULT_PROFILE && unset AWS_PROFILE"
+alias aws_testing="export AWS_DEFAULT_PROFILE=testing && export AWS_PROFILE=testing"
 
 # find out who i am for aws
 alias aws_whoami="aws sts get-caller-identity"
