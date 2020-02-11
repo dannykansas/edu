@@ -105,6 +105,7 @@ eval "$(pyenv virtualenv-init -)"
 alias aws_growlabs="export AWS_DEFAULT_PROFILE=growlabs && export AWS_PROFILE=growlabs"
 alias aws_adroll="unset AWS_DEFAULT_PROFILE && unset AWS_PROFILE"
 alias aws_testing="export AWS_DEFAULT_PROFILE=testing && export AWS_PROFILE=testing"
+alias aws_infratesting="export AWS_DEFAULT_PROFILE=private && export AWS_PROFILE=private"
 
 # find out who i am for aws
 alias aws_whoami="aws sts get-caller-identity"
@@ -126,4 +127,5 @@ function ecr-login () {
 ## use my aws key with ssh
 alias tfp="terraform plan | landscape"
 alias tfapply="terraform apply | landscape"
-
+alias tfplan="terraform plan"
+alias tf_staging="terraform workspace select staging"
