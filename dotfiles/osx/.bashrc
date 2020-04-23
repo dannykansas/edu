@@ -22,13 +22,19 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 # kubectl
 source <(kubectl completion bash)
 
+# awless
+source <(awless completion bash)
+
+# policy_sentry
+eval "$(_POLICY_SENTRY_COMPLETE=source policy_sentry)"
+
 # ----------------------
 # make ssh life easier
 # ----------------------
 
 ## use my aws key with ssh
 opssh(){
-   ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/ops_rsa ec2-user@"$@"
+   ssh -o "IdentitiesOnly=yes" -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i ~/.ssh/ops_rsa ec2-user@"$@"
 }
 
 ## use GCE key with ssh
