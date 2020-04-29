@@ -1,0 +1,1 @@
+int main () {}         // empty or framework c++ program
