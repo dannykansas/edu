@@ -1,3 +1,14 @@
+# avoid committing built binaries (no extension)
+# First ignore everything
+*
+
+# Then specifically unignore all files with extensions
+!*.*
+
+# And unignore all dirs
+!*/
+
+
 *.swp
 *.profile
 go/src/**
