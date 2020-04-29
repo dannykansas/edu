@@ -135,3 +135,12 @@ alias tfp="terraform plan | landscape"
 alias tfapply="terraform apply | landscape"
 alias tfplan="terraform plan"
 alias tf_staging="terraform workspace select staging"
+
+# ----------------------------
+#  vscode helper functions
+# ----------------------------
+
+# create the vscode tmux session
+alias newvsmux="tmux new -s vscode"
+# attach to my default vscode session
+alias vsmux="tmux attach -t vscode"
