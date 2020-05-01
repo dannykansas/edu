@@ -1,4 +1,4 @@
-// my first program in C++
+// testing functionality of cout
 #include <iostream>
 using namespace std;
 int main () 
