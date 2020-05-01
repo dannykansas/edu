@@ -26,7 +26,7 @@ source <(kubectl completion bash)
 source <(awless completion bash)
 
 # policy_sentry
-eval "$(_POLICY_SENTRY_COMPLETE=source policy_sentry)"
+#eval "$(_POLICY_SENTRY_COMPLETE=source policy_sentry)"
 
 # ----------------------
 # make ssh life easier
