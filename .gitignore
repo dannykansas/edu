@@ -8,7 +8,10 @@
 # And unignore all dirs
 !*/
 
+# ignore vscode
+.vscode
 
+# other
 *.swp
 *.profile
 go/src/**
