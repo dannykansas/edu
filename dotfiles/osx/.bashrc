@@ -20,7 +20,7 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 # ---------------------------
 
 # kubectl
-source <(kubectl completion bash)
+# source <(kubectl completion bash)
 
 # awless
 source <(awless completion bash)
@@ -36,6 +36,11 @@ source <(awless completion bash)
 opssh(){
    ssh -o "IdentitiesOnly=yes" -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i ~/.ssh/ops_rsa ec2-user@"$@"
 }
+
+hadoopssh(){
+   ssh -o "IdentitiesOnly=yes" -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i ~/.ssh/ops_rsa ec2-user@"$@"
+}
+
 
 ## use GCE key with ssh
 gssh(){

@@ -49,8 +49,14 @@ if [ -e ${HOME}/google-cloud-sdk/completion.bash.inc ]
 fi
 
 # Source AWS bash completion if aws_completer exists
-if [ -f /usr/local/bin/aws_completer ]; then
-    complete -C '/usr/local/bin/aws_completer' aws
+# if [ -f  ]; then
+#    complete -C '/usr/local/bin/aws_completer' aws
+# fi
+
+# Source AWS bash completion if aws_completer exists in
+# the current pyenv shims
+if [ -f ~/.pyenv/shims/aws_completer ]; then
+  complete -C '~/.pyenv/shims/aws_completer' aws
 fi
 
 # Use git autocompletion, if it exists
