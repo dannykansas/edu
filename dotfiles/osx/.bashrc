@@ -11,6 +11,7 @@
 # brew sometimes throws stuff in sbin
 # TODO: cleanup or leave; MacPorts already prepends this to the path in .bash_profile
 export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/local/bin/xmrig
 
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
@@ -104,6 +105,9 @@ alias wifiup="networksetup -setairportpower Wi-Fi on"
 alias dsa='docker stop `docker ps -q`'
 alias dcl='docker stop `docker ps -aq` && docker rm `docker ps -aq`'
  
+# find D&I terms
+alias grep_di="grep -rnw 'master\|slave\|whitelist\|blacklist' ./*"
+
 # prepend pyenv shims to path
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
@@ -113,10 +117,10 @@ eval "$(pyenv virtualenv-init -)"
 # -------------------
 
 # aws shortcuts for multiple accounts
+alias aws_dsp="export AWS_DEFAULT_PROFILE=dsp && export AWS_PROFILE=dsp"
 alias aws_growlabs="export AWS_DEFAULT_PROFILE=growlabs && export AWS_PROFILE=growlabs"
+alias aws_bi="export AWS_DEFAULT_PROFILE=bi && export AWS_PROFILE=bi"
 alias aws_adroll="unset AWS_DEFAULT_PROFILE && unset AWS_PROFILE"
-alias aws_testing="export AWS_DEFAULT_PROFILE=testing && export AWS_PROFILE=testing"
-alias aws_infratesting="export AWS_DEFAULT_PROFILE=private && export AWS_PROFILE=private"
 
 # find out who i am for aws
 alias aws_whoami="aws sts get-caller-identity"
@@ -149,3 +153,9 @@ alias tf_staging="terraform workspace select staging"
 alias newvsmux="tmux new -s vscode"
 # attach to my default vscode session
 alias vsmux="tmux attach -t vscode"
+
+# ---------------------------
+#  banyan setup helpers
+# ---------------------------
+HOLOGRAM_PATH="/Library/LaunchDaemons/com.adroll.hologram.plist"
+alias reload_hologram="sudo launchctl unload ${HOLOGRAM_PATH} && sudo launchctl load ${HOLOGRAM_PATH}"
