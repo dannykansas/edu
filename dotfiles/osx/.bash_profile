@@ -65,9 +65,10 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 # Source chtf (change terraform version)
-if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
-    source "/usr/local/share/chtf/chtf.sh"
-fi
+# if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
+#    source "/usr/local/share/chtf/chtf.sh"
+# fi
+## removed in favor of trialing tfenv
 
 # stop Catalina zsh prompt annoyances
 export BASH_SILENCE_DEPRECATION_WARNING=1
