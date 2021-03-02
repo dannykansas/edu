@@ -11,10 +11,9 @@
 # brew sometimes throws stuff in sbin
 # TODO: cleanup or leave; MacPorts already prepends this to the path in .bash_profile
 export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:/usr/local/bin/xmrig
 
 # cache pip-installed packages to avoid re-downloading
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+# export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 # ---------------------------
 #  specific completion loaders
@@ -22,12 +21,6 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 # kubectl
 # source <(kubectl completion bash)
-
-# awless
-source <(awless completion bash)
-
-# policy_sentry
-#eval "$(_POLICY_SENTRY_COMPLETE=source policy_sentry)"
 
 # ----------------------
 # make ssh life easier
@@ -41,7 +34,6 @@ opssh(){
 hadoopssh(){
    ssh -o "IdentitiesOnly=yes" -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i ~/.ssh/ops_rsa ec2-user@"$@"
 }
-
 
 ## use GCE key with ssh
 gssh(){
@@ -65,11 +57,6 @@ gp(){
   git pull
 }
 
-# I probably shouldn't have this as a shortcut... hmm.
-gpush(){
-  git commit -am "$@" && git push
-}
-
 # --------------------
 #   git subtree funcs
 # --------------------
@@ -81,11 +68,6 @@ git-all-subtrees(){
 git-active-subtrees(){
   git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi'
 }
-
-# node version manager setup
-export NVM_DIR="/Users/${USER}/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This actually loads nvm
 
 # -------------------
 #  golang setup
@@ -109,8 +91,8 @@ alias dcl='docker stop `docker ps -aq` && docker rm `docker ps -aq`'
 alias grep_di="grep -rnw 'master\|slave\|whitelist\|blacklist' ./*"
 
 # prepend pyenv shims to path
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 
 # -------------------
 #  aws related funcs
@@ -138,17 +120,16 @@ function ecr-login () {
 # ----------------------------
 #  terraform helper functions
 # ----------------------------
-
-## use my aws key with ssh
-alias tfp="terraform plan | landscape"
-alias tfapply="terraform apply | landscape"
+alias tfapply="terraform apply"
 alias tfplan="terraform plan"
-alias tf_staging="terraform workspace select staging"
+
+alias twsp='terraform workspace select production'
+alias twss='terraform workspace select staging'
+alias twsd='terraform workspace select default'
 
 # ----------------------------
 #  vscode helper functions
 # ----------------------------
-
 # create the vscode tmux session
 alias newvsmux="tmux new -s vscode"
 # attach to my default vscode session
