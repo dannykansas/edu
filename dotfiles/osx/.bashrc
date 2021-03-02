@@ -104,9 +104,6 @@ alias aws_growlabs="export AWS_DEFAULT_PROFILE=growlabs && export AWS_PROFILE=gr
 alias aws_bi="export AWS_DEFAULT_PROFILE=bi && export AWS_PROFILE=bi"
 alias aws_adroll="unset AWS_DEFAULT_PROFILE && unset AWS_PROFILE"
 
-# find out who i am for aws
-alias aws_whoami="aws sts get-caller-identity"
-
 # connect to an instance by id
 # stolen from: http://travisjeffery.com/b/2015/11/ssh-into-ec2-instances-by-instance-id/
 function ec2-ssh () {

@@ -35,9 +35,9 @@ export CLICOLOR=1
 
 # Source AWS bash completion if aws_completer exists in
 # the current pyenv shims
-if [ -f ~/.pyenv/shims/aws_completer ]; then
-  complete -C '~/.pyenv/shims/aws_completer' aws
-fi
+# if [ -f ~/.pyenv/shims/aws_completer ]; then
+#  complete -C '~/.pyenv/shims/aws_completer' aws
+# fi
 
 # Use git autocompletion, if it exists
 if [ -f ~/.git-completion.bash ]; then
