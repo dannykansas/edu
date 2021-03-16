@@ -114,6 +114,12 @@ function ecr-login () {
   aws ecr get-login --region us-west-2 --no-include-email
 }
 
+# This should work with aws-cli 1.x and 2.x
+function ecr-login-v2 () {
+  _DOCKER_REPO="$(aws ecr get-authorization-token --output text  --query 'authorizationData[].proxyEndpoint')"
+  aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin $_DOCKER_REPO
+}
+
 # ----------------------------
 #  terraform helper functions
 # ----------------------------
