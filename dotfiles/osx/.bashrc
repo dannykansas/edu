@@ -111,7 +111,9 @@ function ec2-ssh () {
 }
 
 function ecr-login () {
-  aws ecr get-login --region us-west-2 --no-include-email
+  #only compatible with aws-cli <2.0
+  #aws ecr get-login --region us-west-2 --no-include-email
+  aws ecr get-login-password | docker login --password-stdin --username AWS "771945457201.dkr.ecr.us-west-2.amazonaws.com"
 }
 
 # This should work with aws-cli 1.x and 2.x
@@ -143,3 +145,9 @@ alias vsmux="tmux attach -t vscode"
 # ---------------------------
 HOLOGRAM_PATH="/Library/LaunchDaemons/com.adroll.hologram.plist"
 alias reload_hologram="sudo launchctl unload ${HOLOGRAM_PATH} && sudo launchctl load ${HOLOGRAM_PATH}"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/dannyfowler/google-cloud-sdk/path.bash.inc' ]; then . '/Users/dannyfowler/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/dannyfowler/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dannyfowler/google-cloud-sdk/completion.bash.inc'; fi
