@@ -3,6 +3,9 @@
 
 ## PATH MANIPULATION
 
+# Get Banyan binaries on the path
+export PATH=$PATH:"/Applications/Banyan.app/Contents/Resources/bin/"
+
 # Setup Go language paths
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
