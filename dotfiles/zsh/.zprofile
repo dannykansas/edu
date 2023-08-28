@@ -11,7 +11,9 @@ export PATH="/opt/devtools:$PATH"
 # Add python alias for macOS 12.3+
 #alias python=/opt/homebrew/bin/python3
 
-#add key to ssh-agent if not already present
+# Add our key to ssh-agent if not already present
+#  - ensures errors are emitted
+#  - prevents expected "No keychain exists" errors when accessing this host from SSH
 if [ -z "$SSH_CONNECTION" ]; then
   ssh-add -l | grep -q `ssh-keygen -lf ~/.ssh/id_rsa  | awk '{print $2}'` || ssh-add --apple-use-keychain ~/.ssh/id_rsa 
 fi

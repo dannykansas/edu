@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Creating symlinks for dotfiles..."
 
-dotfiles=('.zshrc' '.zprofile' 'zsh.d/')
+dotfiles=('.zshrc' '.zprofile' '.zsh.d/' '.zsh.d/aliases.zsh')
 
 for each in ${dotfiles[*]}; do
   echo ${HOME}/$each
